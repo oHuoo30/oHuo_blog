@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @oHuoo30
+- 👋 Hi, I’m @oHuo
 - 👀 I’m interested in 嘿嘿嘿
 - 🌱 I’m currently learning ZHUANGB
 - 💞️ I’m looking to collaborate on ...
