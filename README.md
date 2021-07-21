@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @oHuo
 - 👀 I’m interested in 嘿嘿嘿
-- 🌱 I’m currently learning ZHUANGB
+- 🌱 I’m currently learning zuang_b
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
