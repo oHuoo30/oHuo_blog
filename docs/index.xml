@@ -6,14 +6,24 @@
     <description>Recent content on ohuo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 22:03:32 +0800</lastBuildDate><atom:link href="https://ohuoo30.github.io/ohuo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Jul 2021 19:49:27 +0800</lastBuildDate><atom:link href="https://ohuoo30.github.io/ohuo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2</title>
-      <link>https://ohuoo30.github.io/ohuo/posts/2/</link>
-      <pubDate>Wed, 21 Jul 2021 22:03:32 +0800</pubDate>
+      <title>Kafka</title>
+      <link>https://ohuoo30.github.io/ohuo/posts/kafka_chapter01/</link>
+      <pubDate>Sat, 31 Jul 2021 19:49:27 +0800</pubDate>
       
-      <guid>https://ohuoo30.github.io/ohuo/posts/2/</guid>
-      <description>2 second  list1 list2  </description>
+      <guid>https://ohuoo30.github.io/ohuo/posts/kafka_chapter01/</guid>
+      <description>认识kafka 消息引擎系统   消息引擎系统通常以软件接口为主要形式，实现松耦合异步式数据传递
+  消息设计
+ 消息通常都采用结构化的方式进行设计,xml/json/二进制/自定义结构化    传输协议设计
+ 指定了消息再不同系统之间的传输方式      消息引擎范型
+  消息队列模型
+ 基于队列提供消息传输服务，多用于进程间通信及线程间通信 sender/recevier，queue(缓冲区) 点对点的消息传递方式,发送者和消费者一对一    发布/订阅模型
+ pub/sub,topic(消息的容器) 发布者将消息发送到指定topic,所有订阅该topic的订阅者都可以接收到该topic下的所有消息      JMS
+ Java消息服务,JavaMessage Service 一套API规范,用于实现系统间消息传递    基本概念   消息
+ 二进制字节数组ByteBuffer,提高内存有效使用率 大量使用页缓存而非堆内存，（进程崩溃时，页缓存的数据依然存在）    topic,partition
+ topic-partition-message三级结构来分散负载 partition不可修改的有序消息序列 提升系统吞吐量    offset
+ 通过topic partition offset，可以在kafka集群中找到唯一对应的消息    replica</description>
     </item>
     
   </channel>

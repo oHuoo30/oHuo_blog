@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.85.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kafka &middot; ohuo</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://ohuoo30.github.io/ohuo/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://ohuoo30.github.io/ohuo/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://ohuoo30.github.io/ohuo/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://ohuoo30.github.io/ohuo/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class="theme-base-0f layout-reverse">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ohuoo30.github.io/ohuo/"><h1>ohuo</h1></a>
+      <p class="lead">
+       the root is on the top of a tree 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://ohuoo30.github.io/ohuo/">Home</a> </li>
+        <li><a href="https://github.com/oHuoo30/"> github </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Kafka</h1>
+  <time datetime=2021-07-31T19:49:27&#43;0800 class="post-date">Sat, Jul 31, 2021</time>
+  <h1 id="认识kafka">认识kafka</h1>
+<h2 id="消息引擎系统">消息引擎系统</h2>
+<ul>
+<li>
+<p>消息引擎系统通常以软件接口为主要形式，实现松耦合异步式数据传递</p>
+<ul>
+<li>
+<p>消息设计</p>
+<ul>
+<li>消息通常都采用结构化的方式进行设计,xml/json/二进制/自定义结构化</li>
+</ul>
+</li>
+<li>
+<p>传输协议设计</p>
+<ul>
+<li>指定了消息再不同系统之间的传输方式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>消息引擎范型</p>
+<ul>
+<li>
+<p>消息队列模型</p>
+<ul>
+<li>基于队列提供消息传输服务，多用于进程间通信及线程间通信</li>
+<li>sender/recevier，queue(缓冲区)</li>
+<li>点对点的消息传递方式,发送者和消费者一对一</li>
+</ul>
+</li>
+<li>
+<p>发布/订阅模型</p>
+<ul>
+<li>pub/sub,topic(消息的容器)</li>
+<li>发布者将消息发送到指定topic,所有订阅该topic的订阅者都可以接收到该topic下的所有消息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>JMS</p>
+<ul>
+<li>Java消息服务,JavaMessage Service</li>
+<li>一套API规范,用于实现系统间消息传递</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本概念">基本概念</h2>
+<ul>
+<li>
+<p>消息</p>
+<ul>
+<li>二进制字节数组ByteBuffer,提高内存有效使用率</li>
+<li>大量使用页缓存而非堆内存，（进程崩溃时，页缓存的数据依然存在）</li>
+</ul>
+</li>
+<li>
+<p>topic,partition</p>
+<ul>
+<li>topic-partition-message三级结构来分散负载</li>
+<li>partition不可修改的有序消息序列</li>
+<li>提升系统吞吐量</li>
+</ul>
+</li>
+<li>
+<p>offset</p>
+<ul>
+<li>通过topic partition offset，可以在kafka集群中找到唯一对应的消息</li>
+</ul>
+</li>
+<li>
+<p>replica</p>
+<ul>
+<li>partition的冗余备份，防止数据丢失，保证分布式系统高可靠性</li>
+<li>leader,follower
+<ul>
+<li>leader replica</li>
+<li>follower replica
+<ul>
+<li>默认不提供服务（不负责响应客户端发来的消息写入和消息消费请求）</li>
+<li>leader宕机，选举出新的leader</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ISR</p>
+<ul>
+<li>in-sync replica</li>
+<li>partition下leader replica与follower replica的同步机制
+<ul>
+<li>1.ISR中至少存在一个活着的replica</li>
+<li>2.已提交 消息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用场景">使用场景</h2>
+<ul>
+<li>消息传输</li>
+<li>网站行为日志追踪</li>
+<li>数据收集</li>
+<li>日志收集</li>
+<li>流式处理</li>
+<li>Event Sourcing</li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
