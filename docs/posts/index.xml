@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 31 Jul 2021 19:49:27 +0800</lastBuildDate><atom:link href="https://ohuoo30.github.io/ohuo/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kafka</title>
+      <title>认识kafka</title>
       <link>https://ohuoo30.github.io/ohuo/posts/kafka_chapter01/</link>
       <pubDate>Sat, 31 Jul 2021 19:49:27 +0800</pubDate>
       
       <guid>https://ohuoo30.github.io/ohuo/posts/kafka_chapter01/</guid>
-      <description>认识kafka 消息引擎系统   消息引擎系统通常以软件接口为主要形式，实现松耦合异步式数据传递
+      <description>消息引擎系统   消息引擎系统通常以软件接口为主要形式，实现松耦合异步式数据传递
   消息设计
  消息通常都采用结构化的方式进行设计,xml/json/二进制/自定义结构化    传输协议设计
  指定了消息再不同系统之间的传输方式      消息引擎范型
