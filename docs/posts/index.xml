@@ -6,7 +6,16 @@
     <description>Recent content in Posts on ohuo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Jul 2021 19:49:27 +0800</lastBuildDate><atom:link href="https://ohuoo30.github.io/ohuo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Jul 2021 22:24:18 +0800</lastBuildDate><atom:link href="https://ohuoo30.github.io/ohuo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kafka环境搭建</title>
+      <link>https://ohuoo30.github.io/ohuo/posts/kafka_chapter02/</link>
+      <pubDate>Sat, 31 Jul 2021 22:24:18 +0800</pubDate>
+      
+      <guid>https://ohuoo30.github.io/ohuo/posts/kafka_chapter02/</guid>
+      <description>docker-compose  创建了一个 zookeeper 和 一个 kafka 容器  version: &#39;3&#39; services: zookeeper: image: wurstmeister/zookeeper ports: - &amp;quot;2181:2181&amp;quot; kafka: image: wurstmeister/kafka depends_on: [ zookeeper ] ports: - &amp;quot;9092:9092&amp;quot; environment: KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1 KAFKA_CREATE_TOPICS: &amp;quot;test:1:1&amp;quot; KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181 构建和启动 docker-compose build # 构建 docker-compose up # 启动 命令行操作示例  进入到容器 docker exec -it compose_kafka_1 bash  操作 topic  创建topic $KAFKA_HOME/bin/kafka-topics.sh --create --topic topic123 --partitions 4 --zookeeper compose_zookeeper_1:2181 --replication-factor 1  topic列表 $KAFKA_HOME/bin/kafka-topics.sh kafka-topics --list --zookeeper compose_zookeeper_1  topic详情 $KAFKA_HOME/bin/kafka-topics.</description>
+    </item>
+    
     <item>
       <title>认识kafka</title>
       <link>https://ohuoo30.github.io/ohuo/posts/kafka_chapter01/</link>

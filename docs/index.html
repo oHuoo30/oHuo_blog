@@ -53,6 +53,17 @@
     <div class="posts">
 <article class="post">
   <h1 class="post-title">
+    <a href="https://ohuoo30.github.io/ohuo/posts/kafka_chapter02/">kafka环境搭建</a>
+  </h1>
+  <time datetime="2021-07-31T22:24:18&#43;0800" class="post-date">Sat, Jul 31, 2021</time>
+  docker-compose  创建了一个 zookeeper 和 一个 kafka 容器  version: '3' services: zookeeper: image: wurstmeister/zookeeper ports: - &quot;2181:2181&quot; kafka: image: wurstmeister/kafka depends_on: [ zookeeper ] ports: - &quot;9092:9092&quot; environment: KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1 KAFKA_CREATE_TOPICS: &quot;test:1:1&quot; KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181 构建和启动 docker-compose build # 构建 docker-compose up # 启动 命令行操作示例  进入到容器 docker exec -it compose_kafka_1 bash  操作 topic  创建topic $KAFKA_HOME/bin/kafka-topics.sh --create --topic topic123 --partitions 4 --zookeeper compose_zookeeper_1:2181 --replication-factor 1  topic列表 $KAFKA_HOME/bin/kafka-topics.sh kafka-topics --list --zookeeper compose_zookeeper_1  topic详情 $KAFKA_HOME/bin/kafka-topics.
+  
+  <div class="read-more-link">
+    <a href="/ohuo/posts/kafka_chapter02/">Read More…</a>
+  </div>
+  
+</article><article class="post">
+  <h1 class="post-title">
     <a href="https://ohuoo30.github.io/ohuo/posts/kafka_chapter01/">认识kafka</a>
   </h1>
   <time datetime="2021-07-31T19:49:27&#43;0800" class="post-date">Sat, Jul 31, 2021</time>
